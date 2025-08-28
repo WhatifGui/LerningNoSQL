@@ -50,3 +50,41 @@ db.NomeDaCollection.insertOne({
         {_id: ObjectId('68aec48653f38ce149a75ac7'}
     );
 ```
+
+# MongoDB Básico
+
+### Séries temporais
+
+É uma sequência de pontos de dados indexados ou listados em ordem cronológica. Em outras palavras, é qualquer dado que muda ao longo do tempo. Em minhas palavras são dados que mudam continuamente, exemplos são os dados referentes a temperaturas, onde a cada hora ou a cada minuto aquele valor pode mudar, onde a temperatura atual é mais importante do que a temperatura passada.
+
+### Tipos
+
+O mongo shell fornece uns operadores .instanceof() e .typeof(), como também vários métodos para retornar, seja como uma string ou como um objeto
+
+``O MongoSH utiliza motor V8 então permite utilizar comandos em JavaScript, ou seja, para eu utilizar o método .instanceof() e .typeof() é necessário anteriormente declarar a variavel``
+
+```javascript
+    let myDocument = db.aprendizado.findOne({})
+
+    myDocument._id instanceof ObjectId // retornará true, pois o meu ._id é uma instância do meu ObjectId
+
+    typeof myDocument // Retornará Object
+``` 
+
+#### Data
+
+``Date()`` método que retorna uma data como uma string
+
+``new Date()`` Construtor que retorna um Objeto do ISODate()
+
+``ISODate()``Construtor que retorna um Objeto usando ISODate()wrapper
+
+````javascript
+
+    db.myCollection.findOne({
+        title: "Aprendendo novos tipos",
+        description: "Acrescentando o tipo Date nos meu banco de data",
+        date: new Date() // retornará 2025-08-28T09:08:36.669+00:00
+    })
+
+```` 
