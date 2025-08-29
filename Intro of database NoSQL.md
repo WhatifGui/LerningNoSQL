@@ -88,3 +88,8 @@ O mongo shell fornece uns operadores .instanceof() e .typeof(), como também vá
     })
 
 ```` 
+
+## MapReduce
+ 
+
+ ``MapReduce`` surgiu da necessidade de um processamento em cluster, onde seria possível uma escabalidade elastica, horizontal e vertical, Map onde particionamos os dados e reduce onde os resultados parciais fazem a agregação do resultado, ou seja, Map particiona os dados e o Reduce pega esses dados particionados e agrega reduzindo , tudo isso em cluster.
