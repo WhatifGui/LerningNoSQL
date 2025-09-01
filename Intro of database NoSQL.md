@@ -93,3 +93,24 @@ O mongo shell fornece uns operadores .instanceof() e .typeof(), como também vá
  
 
  ``MapReduce`` surgiu da necessidade de um processamento em cluster, onde seria possível uma escabalidade elastica, horizontal e vertical, Map onde particionamos os dados e reduce onde os resultados parciais fazem a agregação do resultado, ou seja, Map particiona os dados e o Reduce pega esses dados particionados e agrega reduzindo , tudo isso em cluster.
+
+
+## Consistência versus Disponibilidade
+
+Primeiramente, temos que entender que no Teorema CAP afirma que é impossível para um banco de dados distribuido garantir as três propriedades ao mesmo tempo, sendo elas Consistência, disponibilidade e partição. 
+
+- ``Partição:``Tolerante a falhas de rede.
+- ``Disponibilidade:`` Mesmo que o servidor falhe, ou se torna inacessíveis o sistema como um todo continua operante.
+- ``Consistência:``Consiste em, após uma requisição de escrita em um arquivo, a leitura do mesmo independentemente da origem, verá a ultima versão do arquivo.
+
+## Teorema CAP
+
+Teorema CAP é o que foi afirmado acima, onde explica um teto sobre sistemas distribuidos. Ele afirma que um sistema distribuido consegue garantir no máximo duas das três propriedades (Partição, consistência e disponibilidade) ao mesmo tempo. Entende-se que necessáriamente um sistema distribuido, será necessário garantir a partição, pois entende-se que um sistema distribuido estará disponivel entre servidores, necessitando a garantia de falhas de rede, pois é algo comumente de acontecer. Ou seja, instantaneamente restando a escolha entre: Disponibilidade e Consistência. 
+
+- A alta consistência tem o custo de menor de disponibilidade.
+- A Alta disponibilidade tem o custo menor de consistência.
+
+Lembrando que, esse teorema muita das vezes será somente filosoficamente, raramente acontece realmente no cotidiano.
+
+## Big Data
+
